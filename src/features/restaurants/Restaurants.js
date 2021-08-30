@@ -1,7 +1,14 @@
 import React from "react";
-
-function Restaurants() {
-  return <ul>Restaurants Component</ul>;
+import Resturant from "./Restaurant";
+function Restaurants({ state }) {
+	console.log();
+	return (
+		<ul>
+			{state.restaurants.entities.map((resturant) => (
+				<Resturant key={resturant.id} restaurant={resturant} />
+			))}
+		</ul>
+	);
 }
 
 export default Restaurants;
